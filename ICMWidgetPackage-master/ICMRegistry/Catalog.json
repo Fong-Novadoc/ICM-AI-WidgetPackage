@@ -1,0 +1,58 @@
+{
+	"Name": "Novadoc ICM Widget Package",
+	"Description": "Novadoc Case Widgets package",
+	"Locale": "",
+	"Version": "1.0.0",
+	"Categories": [
+		{
+			"id": "ExtendedCaseMWidgets",
+			"title": "Extended Case Widgets"
+		},
+		{
+			"id": "CustomWidgets",
+			"title": "Custom Widgets"
+		},
+		{
+			"id":"AiWidgets",
+			"title": " Ai Widgets"
+		}
+	],
+	"Widgets": [
+		{
+			"id": "CaseComments",
+			"title": "Case Comments Widget",
+			"category": "ExtendedCaseMWidgets",
+			"description": "Displays comments on a case and enables users to add or edit comments.",
+			"definition": "CaseComments.json",
+			"preview": "icons/custom_case_comments_icon.png",
+			"icon": "icons/custom_case_comments_icon.png",
+			"runtimeClassName": "novadoc.extended.pgwidget.casecomments.CaseComments",
+			"help": "acmwrh97.htm",
+			"previewThumbnail": "icons/custom_case_comments_icon.png"
+		},
+		{
+			"id": "TitleBox",
+			"title": "Title Box",
+			"category": "CustomWidgets",
+			"description": "Displays a title",
+			"definition": "TitleBox.json",
+			"preview": "icons/title_box_icon.png",
+			"icon": "icons/title_box_icon.png",
+			"runtimeClassName": "novadoc.widget.titlebox.TitleBox",
+			"help": "acmwrh100.htm",
+			"previewThumbnail": "icons/title_box_icon.png"
+		},
+		{
+			"id": "AiSearch",
+			"title": "Ai Search",
+			"category": "AiWidgets",
+			"description": "Displays a Search made by Fong",
+			"definition": "AiSearch.json",
+			"preview": "icons/title_box_icon.png",
+			"icon": "icons/title_box_icon.png",
+			"runtimeClassName": "novadoc.widget.aisearch.AiSearch",
+			"help": "acmwrh100.htm",
+			"previewThumbnail": "icons/title_box_icon.png"
+		}
+	]
+}

@@ -1,0 +1,37 @@
+@CHARSET "ISO-8859-1";
+
+.commentContentPane {
+	min-height: 100px;
+	white-space: normal;
+}
+
+.commentContentPane > .historyPanel {
+	height:	calc(100% - 97px);
+}
+
+.commentContentPane .ecmContentList {
+	height: 100% !important;
+}
+
+.commentContentPane div[data-dojo-attach-point=gridContainer] {
+	height: 100% !important;
+}
+
+.commentContentPane div[data-dojo-attach-point=gridArea] {
+	height: 98% !important;
+	overflow: hidden !important;
+}
+
+.commentContentPane .gridx {
+	height: calc(100% - 9px) !important;
+	border-left: 1px solid #efeff1 !important;
+	border-right: 1px solid #efeff1 !important;
+}
+
+.commentContentPane .gridx .gridxMain {
+	height: 100% !important;
+}
+
+.commentContentPane .newCommentLabel {
+	padding-top: 0 !important;
+}

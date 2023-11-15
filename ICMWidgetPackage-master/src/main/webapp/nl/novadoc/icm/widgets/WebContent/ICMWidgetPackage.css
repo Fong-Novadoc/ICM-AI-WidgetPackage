@@ -1,0 +1,9 @@
+@import url("catalog/icmextension/pgwidget/casecomments/resources/CaseComments.css");
+
+div.novadoc-logo {
+	background-image: url(images/novadoc.png);
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+}

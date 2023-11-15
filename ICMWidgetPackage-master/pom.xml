@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ICMWidgetPackage</groupId>
+	<artifactId>ICMWidgetPackage</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Novadoc ICM Widget Package</name>
+
+	<organization>
+		<name>Novadoc ECM BV</name>
+		<url>http://www.novadoc.nl</url>
+	</organization>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<main.java>src/main/java</main.java>
+		<test.java>src/test/java</test.java>
+		<main.resources>src/main/resources</main.resources>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.icn</groupId>
+			<artifactId>icncore</artifactId>
+			<version>3.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.icn</groupId>
+			<artifactId>navigatorapi</artifactId>
+			<version>3.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.icn</groupId>
+			<artifactId>j2ee</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>jace</artifactId>
+			<version>5.5.7.0</version>
+			<scope>system</scope>
+		    <systemPath>C:\Users\Fong.Suen\Downloads\ICMWidgetPackage-master\ICMWidgetPackage-master\lib\jace-5.5.5.0.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.filenet</groupId>
+			<artifactId>p8cel10n</artifactId>
+			<version>5.5.7.0</version>
+			<scope>system</scope>
+		    <systemPath>C:\Users\Fong.Suen\Downloads\ICMWidgetPackage-master\ICMWidgetPackage-master\lib\p8cel10n-5.5.5.0.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>Ai-WidgetPackage</finalName>
+
+  
+	  <sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+				<exclude>**/*.java</exclude>
+				<exclude>**/*.example</exclude>
+				</excludes>
+			</resource>
+			
+	       	<resource>
+				<directory>src/main/webapp</directory>
+				<excludes>
+				<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-surefire-plugin</artifactId>
+			   <version>2.12.4</version>
+			   <configuration>
+			       <skipTests>true</skipTests>
+			   </configuration>
+			</plugin>
+			<plugin>
+			   <artifactId>maven-compiler-plugin</artifactId>
+			   <version>3.8.1</version>
+			   <configuration>
+			       <source>1.8</source>
+			       <target>1.8</target>
+			   </configuration>
+			</plugin>
+			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-jar-plugin</artifactId>
+			   <version>3.2.0</version>
+			   <configuration>
+			       <archive>
+			           <index>false</index>
+			           <manifest>
+			               <addClasspath>false</addClasspath>
+			               <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+			           </manifest>
+			           <manifestEntries>
+			               <Plugin-Class>nl.novadoc.icm.widgets.ICMWidgetPackage</Plugin-Class>
+			               <Specification-Title>false</Specification-Title>
+			           </manifestEntries>
+			       </archive>
+			       <outputDirectory>./target</outputDirectory>
+			       <finalName>Fong-${project.version}</finalName>
+			   </configuration>
+			</plugin>
+			<plugin>
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-assembly-plugin</artifactId>
+			   <executions>
+			       <execution>
+			           <phase>package</phase>
+			           <goals>
+			               <goal>single</goal>
+			           </goals>
+			           <configuration>
+			               <appendAssemblyId>false</appendAssemblyId>
+			               <descriptors>
+			                   <descriptor>src/main/assembly/zip.xml</descriptor>
+			               </descriptors>
+			           </configuration>
+			       </execution>
+			   </executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

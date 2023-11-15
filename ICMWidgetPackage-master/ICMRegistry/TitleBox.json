@@ -1,0 +1,55 @@
+{
+	"id": "AiSearch",
+	"title": "Ai Search",
+	"category": "CustomWidgets",
+	"description": "Displays a Search made by Fong",
+	"definition": "AiSearch.json",
+	"preview": "icons/title_box_icon.png",
+	"icon": "icons/title_box_icon.png",
+	"runtimeClassName": "novadoc.widget.aisearch.AiSearch",
+	"help": "acmwrh100.htm",
+	"previewThumbnail": [
+		{
+			"propertyType": "group",
+			"type": "propertyPanel",
+			"id": "PropertyGroup",
+			"required": true,
+			"title": "Settings",
+			"propertyMembers": [
+				{
+					"propertyType": "property",
+					"type": "boolean",
+					"id": "showTitle",
+					"defaultValue": true,
+					"disabled": false,
+					"required": true,
+					"visibility": true,
+					"title": "Show title"
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"id": "icm.SendCaseInfo",
+			"title": "Send case information",
+			"functionName": "handleICM_SendCaseInfoEvent",
+			"direction": "subscribed",
+			"description": "Send case information"
+		},
+		{
+			"id": "icm.OverwriteCaseEditable",
+			"title": "Overwrite CaseEditable",
+			"functionName": "handle_OverwriteCaseEditable",
+			"direction": "subscribed",
+			"description": "Overwrite CaseEditable if present"
+		},
+		{
+			"id": "icm.SelectCase",
+			"type": "broadcast",
+			"title": "Select a caseFolder",
+			"direction": "published",
+			"description": "A Case is selected in the FolderTree"
+		}
+	]
+}

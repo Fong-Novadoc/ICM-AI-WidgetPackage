@@ -1,0 +1,69 @@
+{  
+	"id": "CaseComments",
+	"title": "Case Comments Widget",
+	"category": "ExtendedICMWidgets",
+	"description": "Displays comments on a case and enables users to add or edit comments.",
+	"definition": "CaseComments.json",
+	"preview": "images/casecomments_preview.png",
+	"icon": "images/casecomments_preview.png",
+	"runtimeClassName": "catalog.icmextension.pgwidget.casecomments.CaseComments",
+	"help": "acmwrh97.htm",
+	"previewThumbnail": "images/casecomments_preview.png",
+	"properties":[ 
+      {  
+         "propertyType":"property",
+         "type":"string",
+         "id":"PreferredWidth",
+         "defaultValue":"100%",
+         "disabled":true,
+         "required":false,
+         "visibility":false,
+         "title":"Preferred Width"
+      },
+      {  
+         "propertyType":"property",
+         "type":"string",
+         "id":"PreferredHeight",
+         "defaultValue":"100%",
+         "disabled":true,
+         "required":false,
+         "visibility":false,
+         "title":"Preferred Height"
+      },
+      {
+		 "propertyType": "group",
+	     "type": "propertyPanel",
+	     "id": "CaseCommentsPropPanel",					
+	     "required": false,
+	     "title": "Custom settings",
+		 "propertyMembers": [
+		 	 {
+				 "propertyType": "property",
+				 "type": "label",
+				 "id": "customSettingsLabel",
+				 "visibility": true,
+				 "title": "Custom settings:"
+			 },
+			 {  
+		         "propertyType":"property",
+		         "type":"string",
+		         "id":"LoadingText",
+		         "defaultValue":"Laden..",
+		         "disabled":false,
+		         "required":true,
+		         "visibility":false,
+		         "title":"Loading text"
+		     }
+		 ]
+	  }
+   ],
+   "events":[  
+      {  
+         "id":"icm.SendCaseInfo",
+         "title":"Send case information",
+         "functionName":"handleICM_SendCaseInfoEvent",
+         "direction":"subscribed",
+         "description":"Display the case that is specified in the event payload."
+      }
+   ]
+}
